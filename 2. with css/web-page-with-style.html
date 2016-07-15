@@ -24,11 +24,18 @@
             #first-section {
                 color: #4285F4;
                 background-color: #CEF6CE;
-                width: 50%
+                width: 200px;
+                float: left;
             }
             
             #second-section {
                 background-color: #8AB4F7;
+                width: 200px;
+                float: right;
+            }
+            
+            .clear-float {
+                clear: both
             }
 
         </style>
@@ -44,6 +51,9 @@
             <p id="green">some text. <span class="red underline">Some different text</span></p>
 
             <h1 class="red">CSS is cool!</h1>
+            
         </div>
+        <div class="clear-float"></div>
+        <p style="text-align: center;">No floating text.</p>        
     </body>
 </html>
