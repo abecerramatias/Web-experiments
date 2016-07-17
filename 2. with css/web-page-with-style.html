@@ -25,13 +25,26 @@
                 color: #4285F4;
                 background-color: #CEF6CE;
                 width: 200px;
-                float: left;
+                position: fixed;
+/*
+                position:relative;
+                left: -50px;
+                top: 10px;
+                z-index: 1;
+*/
             }
             
             #second-section {
                 background-color: #8AB4F7;
-                width: 200px;
-                float: right;
+                width: 400px;
+                height: 5000px;
+/*
+                position: relative;
+                left: 100px;
+                top: 100px;
+                z-index: 2;
+                opacity: 0.5;
+*/
             }
             
             .clear-float {
@@ -53,7 +66,6 @@
             <h1 class="red">CSS is cool!</h1>
             
         </div>
-        <div class="clear-float"></div>
         <p style="text-align: center;">No floating text.</p>        
     </body>
 </html>
