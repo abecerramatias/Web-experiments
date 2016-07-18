@@ -3,19 +3,40 @@
 
     <head>
         <title>Webpage With Style</title>
-        <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
         <style type="text/css">
-          h1 {
-            font-family: 'Indie Flower', cursive;
+        .bold {
+          font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .underlined {
+            text-decoration: underline;
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+          color: green;
+        }
+
+        .big{
+          font-size: 200%;
           }
-          p {
-            font-family: "Courier New", Courier, monospace;
-          }
-        </style>
+          </style>
     </head>
 
     <body>
-      <h1>Heading text!</h1>
-      <p>This is some text!</p>
+      <p class="bold">this is some bold text</p>
+      <p class="italic">This some italic text <span class="bold">and this is a bold and italic text</span></p>
+      <p class="underlined">This text is underlined</p>
+      <a href="http://google.com">This link is non-underlined</a>
+      <p class="big">This text is big</p>
+
     </body>
 </html>
