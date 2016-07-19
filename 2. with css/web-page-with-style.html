@@ -4,33 +4,24 @@
     <head>
         <title>Webpage With Style</title>
         <style type="text/css">
-            p {
-                text-align: right;
+            a {
+                text-decoration: none;
             }
             
-            div {
-                width: 600px;
-                height: 150px;
-                background-color: green;
+            a:hover {
+                text-decoration: underline;
             }
             
-            .centered {
-                text-align: center;
-            }
-            
-            .justified {
-                text-align: justify;
+            a:visited {
+                color: green;
             }
 
         </style>
     </head>
 
     <body>
-        <div>
-            <p>this is right aligned text</p>
-            <p class="centered">This text is centered</p>
-            <p class="justified">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget.</p>
-        </div>
-<p></p>
+        <p><a href="http://google.com">Google</a></p>
+        <p><a href="http://google.se" target="_blank">Google in a new tab</a></p>
+
     </body>
 </html>
