@@ -1,17 +1,8 @@
 <html>
     <head>
         <title>Reation time game</title>
-        <style type="text/css">
-            #shape {
-                display: none;
-                position: relative;
-            }
+        <link rel="stylesheet" type="text/css" href="style.css">
             
-            .bold {
-                font-weight: bold;
-            }
- 
-        </style>        
     </head>
     <body>
         
@@ -20,49 +11,6 @@
         <p class="bold">Your Time is: <span id="yourTime"></span></p>
         <div id="shape"></div>
         
-        <script type="text/javascript">
-            var start = new Date().getTime();
-        
-            function getRandomColor() {
-                var letters = "0123456789ABCDEF".split('');
-                var color = "#";
-                
-                for (var i = 0; i < 6; i++){
-                    color = color + letters[Math.floor(Math.random()*16)];
-                }
-                 
-                return color;
-            }
-            
-            function makeShapeAppear() {
-                var top = Math.random()* 400;
-                var left = Math.random() * 400;
-                var width = Math.random() * 250 + 50;
-                var color = getRandomColor();
-                
-                if (Math.random() > 0.5){
-                    document.getElementById("shape").style.borderRadius = "50%";
-                }                    
-                
-                document.getElementById("shape").style.top = top + "px";
-                document.getElementById("shape").style.left = left + "px";
-                document.getElementById("shape").style.width = width + "px";
-                document.getElementById("shape").style.height = width + "px";
-                document.getElementById("shape").style.backgroundColor = color;    
-                document.getElementById("shape").style.display = "block";
-
-                start = new Date().getTime();
-            }
-            
-            setTimeout(makeShapeAppear, Math.random() * 2000);
-                        
-            document.getElementById("shape").onclick = function(e) {
-                document.getElementById("shape").style.display = "none";
-                var end = new Date().getTime();
-                var elapsedTime = (end - start)/1000;
-                document.getElementById("yourTime").innerHTML = elapsedTime + " s";
-                makeShapeAppear();
-            }
-        </script>
+        <script type="application/javascript" src="script.js"></script>
     </body>
 </html>
