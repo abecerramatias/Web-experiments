@@ -1,0 +1,12 @@
+body {
+    font-family: monospace;
+}
+
+#shape {
+    display: none;
+    position: relative;
+}
+
+.bold {
+    font-weight: bold;
+}
