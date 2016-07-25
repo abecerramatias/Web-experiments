@@ -1,34 +1,67 @@
 <html>
     <head>
-        <title>Javascript</title>
+        <title>Reation time game</title>
+        <style type="text/css">
+            #shape {
+                display: none;
+                position: relative;
+            }
+            
+            .bold {
+                font-weight: bold;
+            }
+ 
+        </style>        
     </head>
-
     <body>
-        <p>How many fingers are you holding up?</p>
-        <p><input type="text" id="myNumber">  </p>
-        <p><button id="guess">Guess!</button></p>
+        
+        <h1>Test your reactions!</h1>
+        <p>Clic on the boxes and circles as quickly as you can!</p>
+        <p class="bold">Your Time is: <span id="yourTime"></span></p>
+        <div id="shape"></div>
         
         <script type="text/javascript">
-            document.getElementById("guess").onclick = function() {
-                var myNumber = document.getElementById("myNumber").value;
+            var start = new Date().getTime();
+        
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF".split('');
+                var color = "#";
                 
-                if (myNumber < 6 ) {
-                    var gotIt = false;
-                    var tries = 0;
-
-                    while(!gotIt) {
-                        var guess = Math.random() * 6;
-                        guess = Math.floor(guess);
-                        tries++;
-
-                        if(guess == myNumber){
-                            gotIt = true;
-                            alert("I got it after: " + tries + " tries. You are holding up " + myNumber + " fingers");
-                        }
-                    }
-                } else {
-                    alert("Do you have " + myNumber + " fingers? :S")
+                for (var i = 0; i < 6; i++){
+                    color = color + letters[Math.floor(Math.random()*16)];
                 }
+                 
+                return color;
+            }
+            
+            function makeShapeAppear() {
+                var top = Math.random()* 400;
+                var left = Math.random() * 400;
+                var width = Math.random() * 250 + 50;
+                var color = getRandomColor();
+                
+                if (Math.random() > 0.5){
+                    document.getElementById("shape").style.borderRadius = "50%";
+                }                    
+                
+                document.getElementById("shape").style.top = top + "px";
+                document.getElementById("shape").style.left = left + "px";
+                document.getElementById("shape").style.width = width + "px";
+                document.getElementById("shape").style.height = width + "px";
+                document.getElementById("shape").style.backgroundColor = color;    
+                document.getElementById("shape").style.display = "block";
+
+                start = new Date().getTime();
+            }
+            
+            setTimeout(makeShapeAppear, Math.random() * 2000);
+                        
+            document.getElementById("shape").onclick = function(e) {
+                document.getElementById("shape").style.display = "none";
+                var end = new Date().getTime();
+                var elapsedTime = (end - start)/1000;
+                document.getElementById("yourTime").innerHTML = elapsedTime + " s";
+                makeShapeAppear();
             }
         </script>
     </body>
