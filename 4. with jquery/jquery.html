@@ -3,138 +3,137 @@
         <title>jQuery</title>
         <script type="text/javascript" src="jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <style type="text/css">
-        
+        <script src="jquery-ui/jquery-ui.js"></script>
+        <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+        <style>
             body {
-                font-family: helvetica, sans-serif;
-                font-size: 130%;
+                font-family: sans-serif;
+                padding: 0;
+                margin: 0;
             }
             
-            input {
-                padding: 5px 5px 12px 5px;
-                font-size: 25px;
-                border-radius: 5px;
-                border: 1px solid grey;
-                width: 320px;
+            #header {
+                width: 100%;
+                background-color: #EEEEEE;
+                padding: 5px;
+                height: 30px;
             }
             
-            label {
-                position: relative;
-                top: 12px;
-                width: 200px;
+            #logo {
                 float: left;
-            }        
+                font-weight: bold;
+                font-size: 120%;
+                padding: 3px 5px;
+            }
             
-            #wrapper {
-                width: 550px;
+            #buttonContainer {
+                width: 233px;
                 margin: 0 auto;
             }
             
-            .form-elements {
-                margin-bottom: 10px;
+            .toggleButton {
+                float: left;
+                border: 1px solid grey;
+                padding: 6px;
+                border-right: none;
+                font-size: 90%;
             }
             
-            #submitButton {
-                width: 130px;
-                margin-left: 200px;
+            #html {
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
             }
             
-            #errorMessage {
-                color: red;
-                font-size: 90% !important;
+            #output {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                border-right: 1px solid grey;
             }
             
-            #successMessage {
-                color: green;
-                font-size: 90% !important;
-                display:none;
-                margin-bottom:20px;
-            }            
+            .active {
+                background-color: #E8F2FF;
+            }
+            
+            .highlightedButton {
+                background-color: grey;
+            }
+            
+            textarea {
+                resize: none;
+                border-top: none;
+                border-color: grey;
+                
+                
+            }
+            
+            .panel {
+                float: left;
+                width: 50%;
+                border-left: none;
+            }
+            
+            iframe {
+                border: none;
+            }
+            
+            .hidden {
+                display: none;
+            }
+            
         </style>
     </head>
 
     <body>
-        <div id="wrapper">
-            <div class="form-elements">
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="eg. yourname@gmail.com">
+        
+        <div id="header">
+            <div id="logo">Code Player</div>
+            <div id="buttonContainer">
+                <div class="toggleButton active" id="html">HTML</div>
+                <div class="toggleButton" id="css">CSS</div>
+                <div class="toggleButton" id="javascript">javaScript</div>
+                <div class="toggleButton active" id="output">Output</div>
             </div>
-
-            <div class="form-elements">
-                <label for="phone">Telephone</label>
-                <input type="phone" name="phone" id="phone" placeholder="eg. 111-4567890">        
-            </div>
-
-            <div class="form-elements">
-                <label for="password">password</label>
-                <input type="password" name="password" id="password">        
-            </div>
-
-            <div class="form-elements">
-                <label for="passwordConfirm">password confirm</label>
-                <input type="password" name="passwordConfirm" id="passwordConfirm">        
-            </div>
-            
-            <div class="form-elements">
-                <input type="submit" id="submitButton" value="Sign up">
-            </div>            
-
-            <div id="successMessage">You've done it! Congratulations.</div>
-            
-            <div id="errorMessage"></div>
-            
+        </div>
+        
+        <div id="bodyContainer">
+            <textarea id="htmlPanel" class="panel"><p id="paragraph">hello world!</p></textarea>
+            <textarea id="cssPanel" class="panel hidden">p {color: green;}</textarea>
+            <textarea id="javascriptPanel" class="panel hidden">document.getElementById("paragraph").innerHTML = "Hello!";</textarea>
+            <iframe id="outputPanel" class="panel"></iframe>
         </div>        
+        
+        
+        
         <script type="text/javascript">
-
-            function isValidEmailAddress(emailAddress) {
-                var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
-                return pattern.test(emailAddress);
-            };
+            function updateOutput() {
+                $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
+                document.getElementById("outputPanel").contentWindow.eval($("#javascriptPanel").val());
+            }
             
-            $("#submitButton").click(function(){
-                var errorMessage = "";
-                
-                var fieldsMissing = "";
-                
-                if($("#email").val() == "") {
-                    fieldsMissing += "<br>Email";
-                }
-                
-                if($("#phone").val() == "") {
-                    fieldsMissing += "<br>Telephone";
-                }
-                
-                if($("#password").val() == "") {
-                    fieldsMissing += "<br>Password";
-                }
-                
-                if($("#passwordConfirm").val() == "") {
-                    fieldsMissing += "<br>Confirm Password";
-                }
-                
-                if(fieldsMissing != "") {
-                    errorMessage += "<p>The following field(s) are missing:" + fieldsMissing;
-                }
-                
-                if(isValidEmailAddress($("#email").val()) == false){
-                    errorMessage += "<p>email address invalid</p>";
-                }
-                
-                if($.isNumeric($("#phone").val()) == false) {
-                    errorMessage += "<p>phone is not numeric</p>";
-                }
-                
-                if($("#password").val() != $("#passwordConfirm").val()){
-                    errorMessage += "<p>passwords are not equal</p>";
-                }
-                
-                if (errorMessage != "") {
-                    $("#errorMessage").html(errorMessage);
-                } else {
-                    $("#successMessage").show();
-                    $("#errorMessage").hide();
-                }
+            $(".toggleButton").hover(function(){
+                $(this).addClass("highlightedButton");
+            }, function(){
+                $(this).removeClass("highlightedButton");
             });
-       </script>
+            
+            $(".toggleButton").click(function(){
+                $(this).toggleClass("active");
+                $(this).removeClass("highlightedButton");
+                var panelId = $(this).attr("id") + "Panel";
+                $("#" + panelId).toggleClass("hidden");
+                var numberOfActivePanels = 4 - $('.hidden').length;
+                $(".panel").width(($(window).width()/numberOfActivePanels) - 5);
+            });
+            
+            $(".panel").height($(window).height() - $("#header").height() - 15);
+            $(".panel").width(($(window).width()/2) - 5);
+
+            updateOutput();
+
+            $("textarea").on('change keyup paste', function() {
+                updateOutput();
+            });
+        </script>
     </body>
 </html>
