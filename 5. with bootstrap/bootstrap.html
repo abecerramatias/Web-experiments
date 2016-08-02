@@ -8,63 +8,60 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+      <style type="text/css">
+          body {
+              position: relative;
+          }
+        
+          #one {
+              margin-top: 70px;
+          }
+      </style>
+      
   </head>
-  <body>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"  data-name="Engineering">
-      Send email to Engineering
-    </button>
+  <body data-spy="scroll" data-target="#navbar-example" data-offset="70">
+      <nav class="navbar navbar-default bg-faded navbar-fixed-top" id="navbar-example">      
+          <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#one">One</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#two">Two</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#three">Three</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#four">Four</a>
+              </li>
+            </ul>      
+      </nav>
 
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-name="HR">
-      Send email to HR
-    </button>
+<h2 id="one">Section 1</h2>     
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum risus sed velit pellentesque placerat. Sed facilisis, dolor in imperdiet dapibus, tortor leo euismod ex, pharetra ultrices mi mauris ac diam. In hac habitasse platea dictumst. Mauris non auctor nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt orci vel posuere consectetur. Aenean tristique, dui ac facilisis accumsan, eros risus hendrerit felis, sit amet eleifend velit neque ac felis. Aenean mauris dui, pretium at volutpat vel, semper vel est. Phasellus et tellus eros. Nulla in ullamcorper libero, eu fermentum eros. Phasellus congue diam in neque fringilla, eu aliquam ligula facilisis. Praesent at consequat nibh, ut commodo libero.
+Pellentesque ac cursus nibh. Etiam magna ex, ultricies et egestas id, scelerisque et nisi. Aliquam in mattis velit. Vivamus semper tempor fermentum. Donec lorem sapien, pulvinar a laoreet in, ultrices quis turpis. Sed ornare faucibus auctor. Sed est metus, feugiat cursus porta et, posuere non sem. Maecenas sollicitudin sed massa sed accumsan. Maecenas id nisl vitae odio dignissim feugiat in sit amet mi. Vestibulum rhoncus elementum nunc pharetra aliquet.
+Morbi commodo urna id nibh sollicitudin, et ultrices mi dapibus. Nunc gravida eros vel hendrerit elementum. Duis lobortis hendrerit eros nec tempus. Sed euismod euismod lectus, nec viverra ipsum tempor tempor. Suspendisse pulvinar convallis facilisis. Aenean dapibus tortor id sem semper, sed tempus nisl tempus. Ut varius enim id sodales fringilla. Maecenas varius semper rhoncus. Cras sed interdum ex.</div>      
       
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-name="IT">
-      Send email to IT
-    </button>
+<h2 id="two">Section 2</h2>     
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum risus sed velit pellentesque placerat. Sed facilisis, dolor in imperdiet dapibus, tortor leo euismod ex, pharetra ultrices mi mauris ac diam. In hac habitasse platea dictumst. Mauris non auctor nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt orci vel posuere consectetur. Aenean tristique, dui ac facilisis accumsan, eros risus hendrerit felis, sit amet eleifend velit neque ac felis. Aenean mauris dui, pretium at volutpat vel, semper vel est. Phasellus et tellus eros. Nulla in ullamcorper libero, eu fermentum eros. Phasellus congue diam in neque fringilla, eu aliquam ligula facilisis. Praesent at consequat nibh, ut commodo libero.
+Pellentesque ac cursus nibh. Etiam magna ex, ultricies et egestas id, scelerisque et nisi. Aliquam in mattis velit. Vivamus semper tempor fermentum. Donec lorem sapien, pulvinar a laoreet in, ultrices quis turpis. Sed ornare faucibus auctor. Sed est metus, feugiat cursus porta et, posuere non sem. Maecenas sollicitudin sed massa sed accumsan. Maecenas id nisl vitae odio dignissim feugiat in sit amet mi. Vestibulum rhoncus elementum nunc pharetra aliquet.
+Morbi commodo urna id nibh sollicitudin, et ultrices mi dapibus. Nunc gravida eros vel hendrerit elementum. Duis lobortis hendrerit eros nec tempus. Sed euismod euismod lectus, nec viverra ipsum tempor tempor. Suspendisse pulvinar convallis facilisis. Aenean dapibus tortor id sem semper, sed tempus nisl tempus. Ut varius enim id sodales fringilla. Maecenas varius semper rhoncus. Cras sed interdum ex.</div>      
       
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<h2 id="three">Section 3</h2>     
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum risus sed velit pellentesque placerat. Sed facilisis, dolor in imperdiet dapibus, tortor leo euismod ex, pharetra ultrices mi mauris ac diam. In hac habitasse platea dictumst. Mauris non auctor nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt orci vel posuere consectetur. Aenean tristique, dui ac facilisis accumsan, eros risus hendrerit felis, sit amet eleifend velit neque ac felis. Aenean mauris dui, pretium at volutpat vel, semper vel est. Phasellus et tellus eros. Nulla in ullamcorper libero, eu fermentum eros. Phasellus congue diam in neque fringilla, eu aliquam ligula facilisis. Praesent at consequat nibh, ut commodo libero.
+Pellentesque ac cursus nibh. Etiam magna ex, ultricies et egestas id, scelerisque et nisi. Aliquam in mattis velit. Vivamus semper tempor fermentum. Donec lorem sapien, pulvinar a laoreet in, ultrices quis turpis. Sed ornare faucibus auctor. Sed est metus, feugiat cursus porta et, posuere non sem. Maecenas sollicitudin sed massa sed accumsan. Maecenas id nisl vitae odio dignissim feugiat in sit amet mi. Vestibulum rhoncus elementum nunc pharetra aliquet.
+Morbi commodo urna id nibh sollicitudin, et ultrices mi dapibus. Nunc gravida eros vel hendrerit elementum. Duis lobortis hendrerit eros nec tempus. Sed euismod euismod lectus, nec viverra ipsum tempor tempor. Suspendisse pulvinar convallis facilisis. Aenean dapibus tortor id sem semper, sed tempus nisl tempus. Ut varius enim id sodales fringilla. Maecenas varius semper rhoncus. Cras sed interdum ex.</div>      
       
-      <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>      
-      <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
-  Tooltip on bottom
-</button>
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+      
+<h2 id="four">Section 4</h2>     
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum risus sed velit pellentesque placerat. Sed facilisis, dolor in imperdiet dapibus, tortor leo euismod ex, pharetra ultrices mi mauris ac diam. In hac habitasse platea dictumst. Mauris non auctor nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque tincidunt orci vel posuere consectetur. Aenean tristique, dui ac facilisis accumsan, eros risus hendrerit felis, sit amet eleifend velit neque ac felis. Aenean mauris dui, pretium at volutpat vel, semper vel est. Phasellus et tellus eros. Nulla in ullamcorper libero, eu fermentum eros. Phasellus congue diam in neque fringilla, eu aliquam ligula facilisis. Praesent at consequat nibh, ut commodo libero.
+Pellentesque ac cursus nibh. Etiam magna ex, ultricies et egestas id, scelerisque et nisi. Aliquam in mattis velit. Vivamus semper tempor fermentum. Donec lorem sapien, pulvinar a laoreet in, ultrices quis turpis. Sed ornare faucibus auctor. Sed est metus, feugiat cursus porta et, posuere non sem. Maecenas sollicitudin sed massa sed accumsan. Maecenas id nisl vitae odio dignissim feugiat in sit amet mi. Vestibulum rhoncus elementum nunc pharetra aliquet.
+Morbi commodo urna id nibh sollicitudin, et ultrices mi dapibus. Nunc gravida eros vel hendrerit elementum. Duis lobortis hendrerit eros nec tempus. Sed euismod euismod lectus, nec viverra ipsum tempor tempor. Suspendisse pulvinar convallis facilisis. Aenean dapibus tortor id sem semper, sed tempus nisl tempus. Ut varius enim id sodales fringilla. Maecenas varius semper rhoncus. Cras sed interdum ex.</div>      
+      <!-- jQuery first, then Tether, then Bootstrap JS. -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.3/js/tether.min.js"></script>
-      <script type="text/javascript">
-      $("#myModal").on('show.bs.modal', function(event) {
-          var button = $(event.relatedTarget);
-          var recipient = button.data('name');
-          var modal = $(this);
-          modal.find('.modal-title').text('New message to ' + recipient);
-          modal.find('.modal-body input').val(recipient)
-      })
-      
-          $('[data-toggle="popover"]').popover()
-          
-          $('[data-toggle="tooltip"]').tooltip()
-      </script>
+
   </body>
 </html>
